@@ -1,172 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <style>
-     body {
-      background-color: #0e1320;
-      color: #cfd3dc;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    .search-group {
-      border: 2px solid transparent;
-      border-radius: 5px;
-      width: max-content;
-      transition: border 0.3s;
-    }
-
-    .search-group:hover,
-    .search-group:focus-within {
-      border-color: #198754;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forge Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        a{
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: rgb(0, 85, 0) !important;
+            text-decoration: none;
+        }
+    ul.check {
+      list-style: none; /* hilangkan bullet default */
+      padding-left: 0;
     }
 
-    .search-group .form-control,
-    .search-group .input-group-text {
-      border: none;
-      background-color: #343a40;
-      color: white;
-      outline: none;
+    ul.check li {
+      position: relative;
+      padding-left: 30px; /* beri ruang untuk gambar */
     }
 
-    .search-group .form-control:focus {
-      box-shadow: none;
+    ul.check li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 20px;   /* ukuran gambar */
+      height: 20px;
+      background-image: url("/forge/photo/centang.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    ul.noncheck {
+      list-style: none; /* hilangkan bullet default */
+      padding-left: 0;
     }
 
-    .search-group .form-control::placeholder {
-      color: rgba(255, 255, 255, 0.6);
+    ul.noncheck li {
+      position: relative;
+      padding-left: 30px; /* beri ruang untuk gambar */
     }
 
-    .nav-center {
-      flex: 1;
-      display: flex;
-      justify-content: center;
+    ul.noncheck li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 20px;   /* ukuran gambar */
+      height: 20px;
+      background-image: url("/forge/photo/list.png");
+      background-size: contain;
+      background-repeat: no-repeat;
     }
-
-    .container-narrow {
-      max-width: 1620px;
-      margin: 0 auto;
-    }
-
-    .nav-link.active {
-      color: #198754 !important;
-      background-color: rgba(25, 135, 84, 0.05);
-      border-radius: 0.25rem;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-    }
-
-    .dropdown-menu .dropdown-item:hover {
-      background-color: #2a2f33;
+    .octane{
+      background-color: #2f3746;
       color: #fff;
+      min-height: 50vh;
+        min-width: 100%;
     }
-    .dropdown-menu hr{
-      color: white;
+    .octane img {
+      width: 550px;
+      margin-bottom: 1rem;
+      margin-top: 5rem;
     }
-        .card-dark {
-      background-color: #1b2431;
-      border: none;
-      border-radius: 10px;
+    .octane h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
-    .btn-dark-outline {
-      background-color: #2a2f3a;
-      color: #cfd3dc;
-      border: none;
+    .octane p {
+      color: #b0b8c4;
+      margin-bottom: 1.5rem;
     }
-    .btn-dark-outline:hover {
-      background-color: #3a404f;
+    .octane a{
+      color: #fff;
+      text-decoration: underline;
     }
-    .icon-placeholder {
-      font-size: 3rem;
-      margin-bottom: 20px;
+    .vapor{
+      background-color: #283a5a;
+      color: #fff;
+      min-height: 50vh;
+        min-width: 100%;
     }
-    .free-trial{
-      text-decoration: none;
+    .vapor img {
+      width: 200px;
+      margin-bottom: 1rem;
+      margin-top: 5rem;
     }
-     .search-group {
-      border: 2px solid transparent;
-      border-radius: 5px;
-      width: max-content;
-      transition: border 0.3s;
+    .vapor h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
-  </style>
+    .vapor p {
+      color: #b0b8c4;
+      margin-bottom: 1.5rem;
+    }
+    .vapor a{
+      color: #fff;
+      text-decoration: underline;
+    }
+    </style>
 </head>
-<body class="">
+<body class="bg-light">
+    <!--navigasi-->
+    <header class="bg-white py-3 shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="forge-intro.html" class="text-success fw-bold">
+                <h1 >FORGE</h1>
+            </a>
+            <nav>
+                <a href="#informasi" class="text-secondary me-3">Features</a>
+                <a href="#harga" class="text-secondary me-3">Pricing</a>
+                <a href="#" class="text-secondary me-3">Docs</a>
+                <a href="#" class="text-secondary me-3">Blog</a>
+                <a href="forge-sigin.html" class="text-secondary me-3">Sign in</a>
+                <a href="forge-register.html" class="text-secondary me-3">Register</a>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Navbar -->
-  <div class="navbar navbar-expand-lg ">
-    <div class="container-narrow d-flex align-items-center gap-4 flex-wrap w-100">
+    <section class="text-center py-5 bg-white">
+        <h1 class="ext-darfw-bold tk display-4">Server management doesn't <br>
+            have to be a nightmare</h1>
+        <h2 class="text-secondary mt-3 fs-5">Provision and deploy unlimited PHP applications on DigitalOcean,<br>
+             Akamai, Vultr, Amazon, Hetzner and more.</h2>
+        <div class="mt-4">
+            <a href="forge-register.html" class="badge bg-success text-white fw-semibold fs-5">Start a free trial</a>
+            <a href="#informasi" class="text-success fw-semibold">Learn more</a>
+        </div>
+        <img src="/forge/photo/laravel-forge.png" alt="" style="height: 600px;">
+    </section>
+    <!--card informasi-->
+    <section class="text-center py-5 " id="informasi">
+        <h2 class="fw-bold text-dark display-6"> Forge is already making life easier for </h2>
+        <h2 class="fw-bold text-success display-6">701 applications</h2>
+    </section>
+    <br><br><br><br><br><br>
+    <section class="container pb-5" >
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">Cutting Edge</h5>
+                    <p class="text-muted">We install Nginx, PHP, MySQL, Postgres, Redis, and all the other goodies you need on the cloud of your choice.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">Laravel, Integrated</h5>
+                    <p class="text-muted">Forge is built by the creators of the Laravel Framework and makes deploying your Laravel application a delight.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">Push To Deploy</h5>
+                    <p class="text-muted">Deploying code couldn't be any easier. Just push to master on your GitHub, Bitbucket, or custom Git repository. We'll handle it from there.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">Free TLS Certificates</h5>
+                    <p class="text-muted">Forge integrates with LetsEncrypt, allowing you to obtain free TLS (SSL) certificates for your applications.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">Collaborate</h5>
+                    <p class="text-muted">Using our Business plan you may instantly share your server's management dashboard with your co-workers.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">Dead Simple Queues</h5>
+                    <p class="text-muted">Easily start and manage supervised Laravel Queue workers directly from Forge. No more manual Supervisor configuration.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">Secure By Default</h5>
+                    <p class="text-muted">All Forge servers require SSH key authentication and your firewall comes configured out of the box. Security updates are installed automatically.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">Database Backups</h5>
+                    <p class="text-muted">Our Business plan customers may safely and securely backup your MySQL or Postgres databases to AWS S3 or DigitalOcean Spaces.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">Powerful API</h5>
+                    <p class="text-muted">You can manage your servers programmatically using our robust API, which provides access to the vast majority of Forge features.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">User Isolation</h5>
+                    <p class="text-muted">Run each of the sites on your servers as a separate, secure user, preventing compromised applications from accessing other sites on the server.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">Task Scheduling</h5>
+                    <p class="text-muted">Schedule any recurring tasks that need to run on your server. Use convenient predefined schedules or customize them with cron expressions.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">Server Monitoring</h5>
+                    <p class="text-muted">Quickly monitor your server's CPU, disk space and average load. Plus, we will notify you of server health changes in real-time.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">Log File Access</h5>
+                    <p class="text-muted">Scan through your application, server, and site logs with the click of a button - directly from Forge.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+            <div class="col-md-4 mx-auto">
+                <div class="p-3 ">
+                    <h5 class="fw-bold">Seamless Envoyer Integration</h5>
+                    <p class="text-muted">Laravel Forge offers zero downtime deployments, thanks to a seamless integration with Envoyer.</p>
+                    <a href="#" class="text-secondary link-success ">Learn more ></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br>
+    <!--komentar-->
+    <section class="container pb-5">
+        <h2 class="text-center text-success mb-4">Loved by thousands of developers.</h2>
+        <p class="text-center text-dark fs-5">This is what people are saying about Laravel Forge.</p>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="p-3 shadow-sm border-0 bg-white">
+                    <h5 class="fw-bold">Caleb Porzio</h5>
+                    <p class="text-muted">Everything I build goes on Forge. Makes server management too easy 👌❤️</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 shadow-sm border-0 bg-white">
+                    <h5 class="fw-bold">Marcel Pociot</h5>
+                    <p class="text-muted">Laravel Forge has saved us hundreds of hours of precious development time.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 shadow-sm border-0 bg-white">
+                    <h5 class="fw-bold">Alex Garrett-Smith</h5>
+                    <p class="text-muted">I've used Forge since its launch, and I've never thought about switching.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br>
+    <!--langganan-->
+    <section class="container pb-5" id="harga">
+        <h2 class="text-center text-success fw-bold mb-4">Subscription Plans</h2>
+        <div class="d-flex justify-content-center align-items-center mb-3">
+            <span class="me-2 fw-bold">Monthly</span>
+            <div class="form-check form-switch">
+                <input class="form-check-input bg-success border-success" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            </div>
+            <span class="ms-2 fw-bold">Yearly</span>
+        </div>
+        <div class="row g-7">
+            <!-- Hobby Plan -->
+            <div class="col-md-4 d-flex">
+                <div class="p-4 shadow-sm border-0 text-center card-dark rounded">
+                    <h5 class="fw-bold">Hobby</h5>
+                    <h4 class="fw-bold text-dark price" data-monthly="12" data-yearly="120">
+                        $<span class="amount">12</span> 
+                        <span class="text-secondary fs-6 fw-semibold duration">/month</span>
+                    </h4>
+                    <p class="text-secondary fs-6">The essentials to provide your best work for clients.</p>
+                    <ul class="check text-start mb-0 p-0">
+                        <li>One Server</li>
+                        <li>Unlimited Sites</li>
+                        <li>Unlimited Deployments</li>
+                        <li>Push To Deploy</li>
+                        <li>Basic Support</li>
+                    </ul>
+                    <ul class="noncheck text-start mb-0 p-0">
+                        <li>Share Servers With Teammates</li>
+                        <li>Database Backups</li>
+                        <li>Server Monitoring</li>
+                    </ul>
+                </div>
+            </div>
 
-      <a href="">
-        <img src="forge.png" alt="" style="height: 45px; width: 45px;">
-      </a>
+            <!-- Growth Plan -->
+            <div class="col-md-4 d-flex">
+                <div class="p-4 shadow-sm border-0 text-center card-dark rounded">
+                    <h5 class="fw-bold">Growth</h5>
+                    <h4 class="fw-bold text-dark price" data-monthly="19" data-yearly="190">
+                        $<span class="amount">19</span> 
+                        <span class="text-secondary fs-6 fw-semibold duration">/month</span>
+                    </h4>
+                    <p class="text-secondary fs-6">A plan that scales with your rapidly growing business.</p>
+                    <ul class="check text-start mb-0 p-0">
+                        <li><b>Unlimited</b> Server</li>
+                        <li>Unlimited Sites</li>
+                        <li>Unlimited Deployments</li>
+                        <li>Push To Deploy</li>
+                        <li>Basic Support</li>
+                    </ul>
+                    <ul class="noncheck text-start mb-0 p-0">
+                        <li>Share Servers With Teammates</li>
+                        <li>Database Backups</li>
+                        <li>Server Monitoring</li>
+                    </ul>
+                </div>
+            </div>
 
-      <form class="input-group search-group">
-        <span class="input-group-text">
-          <i class="bi bi-search"></i>
-        </span>
-        <input type="text" class="form-control" placeholder="Search..." aria-label="Search">
-      </form>
+            <!-- Businesses Plan -->
+            <div class="col-md-4 d-flex">
+                <div class="p-4 shadow-sm border-0 text-center card-dark rounded">
+                    <h5 class="fw-bold">Businesses</h5>
+                    <h4 class="fw-bold text-dark price" data-monthly="39" data-yearly="390">
+                        $<span class="amount">39</span> 
+                        <span class="text-secondary fs-6 fw-semibold duration">/month</span>
+                    </h4>
+                    <p class="text-secondary fs-6">Dedicated support and infrastructure for your company.</p>
+                    <ul class="check text-start mb-0 p-0">
+                        <li><b>Unlimited</b> Server</li>
+                        <li>Unlimited Sites</li>
+                        <li>Unlimited Deployments</li>
+                        <li>Push To Deploy</li>
+                        <li><b>Priority</b> Support</li>
+                        <li>Share Servers With Teammates</li>
+                        <li>Database Backups</li>
+                        <li>Server Monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-      <!-- Centered navigation links -->
-      <div class="nav-center">
-        <ul class="navbar-nav flex-row gap-3">
-          <li class="nav-item">
-            <a class="nav-link text-secondary " href="forge-server.html">Servers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-secondary" href="#">Sites</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-secondary active" href="#">Circles</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-secondary" href="#">Recipes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-secondary" href="#">Docs</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="dropdown">
-        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          admin
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end bg-dark">
-          <li><a class="dropdown-item text-light" href="account-server.html">My Account</a></li>
-          <li><a class="dropdown-item text-light" href="API-forge.html">API Tokens</a></li>
-          <li><a class="dropdown-item text-light" href="circels-forge.html">Circles</a></li>
-          <li><a class="dropdown-item text-light" href="billing-forge.html">Billing</a></li>
-          <hr>
-          <li><a class="dropdown-item text-light" href="#">Documentation</a></li>
-          <li><a class="dropdown-item text-light" href="#">Vidio Tutorials</a></li>
-          <li><a class="dropdown-item text-light" href="#">Blog</a></li>
-          <hr>
-          <li><a class="dropdown-item text-light" href="forge-intro.html">Logout</a></li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-  <div class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-      <h2 class="fw-semibold">Circles</h2>
-    </div>
-
-    <div class="card card-dark p-5 text-center mb-4 align-items-center">
-      <img src="circles_forge.png" alt="" style="height: 100px;width: 140px;">
-      <h5 class="fw-normal text-light">Upgrade to our <a href="" class="text-success fw-semibold free-trial">business plan</a> to create Circles.</h5>
-      <p class="text-secondary mt-2">
-        Circles allow you to easily share servers with teammates and friends to manage 
         <br>
-        them together. Circle members can deploy code, update servers, and more.
-      </p>
-    </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <center>
+            <a href="forge-register.html" class="badge bg-success text-white fw-semibold fs-4">Start a free trial</a>
+            <p class="text-secondary pt-3">All prices are in USD. Server provider costs not included.</p>
+        </center>
+    </section>
+    <section class="container text-center py-5 pb-1">
+        <h1 class="text-dark ">Deploy your application in minutes</h1>
+        <p class="text-muted fs-5">Forge links to your account on one of our supported cloud providers.
+             Or, you can even provision a VPS on the custom provider of your choice.</p>
+        <img src="/forge/photo/client.svg" alt="" style="height: 800px ;width: 800px;">
+        <h1 class="text-dark pb-1">We know there is no one size fits all</h1>
+        <p class="text-muted fs-5">Forge can provision a multitude of server types. 
+            Whether you are looking for a single server that can do it all or need to scale your infrastructure to an array of networked servers,
+             Forge can do it all.</p>
+    </section>
+    <section class="container pb-5 justify-content-center text-center">
+                <div class="row g-3 text-center">
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h3 class="text-dark">Application Servers</h3>
+                            <hr class="border-muted mx-auto" style="width: 80%;">
+                            <p class="text-muted">
+                                The kitchen sink! Everything you need to deploy a Laravel / PHP application within a single server.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h3 class="text-dark">Web Servers </h3>
+                            <hr class="border-muted mx-auto" style="width: 80%;">
+                            <p class="text-muted">
+                                Web servers are servers built to handle your PHP application's incoming HTTP traffic.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h3 class="text-dark">Worker Servers</h3>
+                            <hr class="border-muted mx-auto" style="width: 80%;">
+                            <p class="text-muted">
+                                Worker servers function as dedicated PHP queue workers for your application.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h3 class="text-dark">Database Servers</h3>
+                            <hr class="border-muted mx-auto" style="width: 80%;">
+                            <p class="text-muted">
+                                Dedicated MySQL / MariaDB / Postgres servers to help you grow and scale your application.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h3 class="text-dark">Cache Servers</h3>
+                            <hr class="border-muted mx-auto" style="width: 80%;">
+                            <p class="text-muted">
+                                Cache servers host Redis or Memcached instances that you can scale independently.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h3 class="text-dark">Meilisearch Server</h3>
+                            <hr class="border-muted mx-auto" style="width: 80%;">
+                            <p class="text-muted">
+                                Is your application search heavy? Spin up a dedicated Meilisearch server instance.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mx-auto">
+                        <div class="p-3">
+                            <h3 class="text-dark">Load Balancers</h3>
+                            <p class="text-muted">
+                                Handle more traffic by provisioning load balancers to distribute web traffic across your servers.</p>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="text-dark pb-1">But wait, there's more...</h1>
+                <div class="row g-3 text-start">
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h4 class="text-dark">Two-Factor Authentication</h3>
+
+                            <p class="text-muted">
+                                Keep yourself secure and (optionally) setup two-factor authentication on your user account.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h4 class="text-dark">Per Site PHP Versions </h3>
+
+                            <p class="text-muted">
+                                Want to run multiple apps on a server? Easy! Forge allows you to choose the PHP version per application.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h4 class="text-dark">Composer Package Authentication</h3>
+                            <p class="text-muted">
+                                We love Composer, so we've made it first class by allowing you to manage your Composer authentication credentials (auth.json).</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h4 class="text-dark">Redirect Management</h3>
+                            <p class="text-muted">
+                                Maintaining your web server redirects could not be easier. You no longer need to fiddle around with config files!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h4 class="text-dark">Blackfire APM Integration Ready</h3>
+                            <p class="text-muted">
+                                Every Forge server comes ready to integrate with your Blackfire.io application performance monitoring account.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h4 class="text-dark">Papertrail Log Aggregation Ready</h3>
+                            <p class="text-muted">
+                                If you enjoy logging as much as we do, you'll be happy to know that Forge servers are also ready to integrate with your Papertrail account.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h4 class="text-dark">Scriptable Deployments</h3>
+                            <p class="text-muted">
+                                Forge offers a sensible default deployment script for your applications, but gives you full power to customize and make it your own.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h4 class="text-dark">Daemon Management</h3>
+                            <p class="text-muted">
+                                Apart from our first-class Laravel queue worker support, we also allow you to manage any generic Daemons for your web app.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h4 class="text-dark">Expert Support</h3>
+                            <p class="text-muted">
+                                Our support team are always just a few clicks away and ready to help with our shared expertise in server management, PHP, and web apps..</p>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    <center>
+        <h4>...and that isn't all. <a href="" class="text-success">Start a free trial </a>and see what else Forge has to offer.</h4>
+    </center>
+    <section class="octane container text-center justify-content-center align-items-center d-box">
+        <img src="/forge/photo/octane.svg" alt="">
+        <h2>We are ready to deploy Laravel Octane.
+            Are you?</h2>
+            <p>Strap yourself in. All Forge provisioned servers are ready to deliver your site at supersonic speeds using the power of Laravel Octane.</p>
+            <a href="">Learn more about Octane</a>
+    </section>
+    <section class="vapor container text-center justify-content-center align-items-center d-box">
+        <img src="/forge/photo/vapor.svg" alt="">
+        <h2>Want to go totally serverless?</h2>
+        <p>Laravel Vapor is a serverless, auto-scaling deployment platform for Laravel, powered by Amazon Lambda. Launch your Laravel infrastructure on Vapor and fall in love with the scalable simplicity of serverless.</p>
+        <a href="">
+            Learn more about Vapor</a>
+    </section>
+    <footer class="bg-light py-5">
+        <div class="container">
+          <div class="row text-center text-md-start justify-content-center">
+            <div class="col-md-3 mb-4 mb-md-0">
+                <a href="" class="text-dark"><h6 class="fw-bold">Laravel <span class="text-muted">›</span></h6></a>
+              
+              <p class="text-muted small">The PHP Framework for web artisans.</p>
+            </div>
+            <div class="col-md-3 mb-4 mb-md-0 border-start border-end">
+                <a href="" class="text-dark"><h6 class="fw-bold">Vapor <span class="text-muted">›</span></h6></a>
+              
+              <p class="text-muted small">Incredible scale without breaking a sweat.</p>
+            </div>
+            <div class="col-md-3">
+                <a href="" class="text-dark"> <h6 class="fw-bold">Envoyer <span class="text-muted">></span></h6></a>
+              
+              <p class="text-muted small">Zero Downtime PHP deployment.</p>
+            </div>
+          </div>
+      
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-5 text-center text-md-start">
+            <div class="d-flex align-items-center gap-2 text-muted">
+              <img src=/forge/photo/"Laravel.png" alt="Laravel Logo" width="20">
+              <span class="small">By the makers of Laravel</span>
+            </div>
+            <div class="text-muted small mt-3 mt-md-0">
+              Copyright 2025 © Laravel Holdings Inc.
+            </div>
+          </div>
+        </div>
+      </footer>
+<script>
+document.getElementById('flexSwitchCheckDefault').addEventListener('change', function() {
+    const yearly = this.checked;
+    const prices = document.querySelectorAll('.price');
+
+    prices.forEach(price => {
+        const monthlyPrice = price.getAttribute('data-monthly');
+        const yearlyPrice = price.getAttribute('data-yearly');
+
+        price.querySelector('.amount').textContent = yearly ? yearlyPrice : monthlyPrice;
+        price.querySelector('.duration').textContent = yearly ? '/year' : '/month';
+    });
+});
+</script>
 </body>
 </html>
